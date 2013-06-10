@@ -10,9 +10,20 @@
 
 $(document).ready(function () {
     $("#txtInput").keyup(function () {
-        $(".display-box").html($("#txtInput").val());                
+        $(".display-box").html($("#txtInput").val());     
+        var sum=0;
+        var temp_character;
+        for(var character in $("#txtInput").val())
+        {
+            temp_character=character;
+            for(var temp_char in $("#txtInput").val())
+            {
+                
+            }
+        }
     });
     $("#btnadd").click(function () {
+        $("#output").html("hei");
         var sum=0;
         for(var character in $("#txtInput").val())
         {
@@ -31,7 +42,10 @@ $(document).ready(function () {
                         else if(character=='U' || character=='V' || character=='W')
                             sum=sum+6;
                         else
+                        {
                             sum=sum+7;
+                            
+                        }
         }
         
         $(".display-box").html(" "); // Clear the box
