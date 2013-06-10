@@ -5,10 +5,18 @@
     border: 1px solid black;
 }
 
-.text-box {
+.display-box {
+    margin : auto;
     border: 1px solid black;
     height:250px;
     width:250px;
     margin-left:40px;
     margin-top:200px;
 }
+
+.label {
+    margin-left: 40px;
+}
+
+
+
