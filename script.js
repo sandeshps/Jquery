@@ -6,3 +6,15 @@
  * To change this template use File | Settings | File Templates.
  */
 
+
+
+$(document).ready(function () {
+    $("#txtInput").keydown(function () {
+        var msg = $("#txtInput").text();
+        $(".display-box").append($("#txtInput").val());
+    });
+});
+
+
+
+
