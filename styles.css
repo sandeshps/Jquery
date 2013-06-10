@@ -12,6 +12,7 @@
     width:250px;
     margin-left:40px;
     margin-top:200px;
+    text-overflow:clip;
 }
 
 .label {
