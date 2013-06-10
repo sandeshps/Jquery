@@ -1,0 +1,14 @@
+.container {
+    margin:auto;
+    width: 980px;   
+    min-height:100%;
+    border: 1px solid black;
+}
+
+.text-box {
+    border: 1px solid black;
+    height:250px;
+    width:250px;
+    margin-left:40px;
+    margin-top:200px;
+}
