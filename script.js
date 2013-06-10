@@ -12,6 +12,32 @@ $(document).ready(function () {
     $("#txtInput").keyup(function () {
         $(".display-box").html($("#txtInput").val());                
     });
+    $("#btnadd").click(function () {
+        var sum=0;
+        for(var character in $("#txtInput").val())
+        {
+            if( character=='A' || character=='I' || character=='J' || character=='Q' || character=='Y')
+                sum=sum+1;
+            else if(character=='B' || character=='K' || character=='R')
+                sum=sum+2;
+                else if(character=='C' || character=='G' || character=='L' || character=='S')
+                    sum=sum+3;
+                else if(character=='D' || character=='M' || character=='T')
+                    sum=sum+4;
+                    else if(character=='F' || character=='P')
+                        sum=sum+8;
+                    else if(character=='E' || character=='H' || character=='N' || character=='X')
+                        sum=sum+5;
+                        else if(character=='U' || character=='V' || character=='W')
+                            sum=sum+6;
+                        else
+                            sum=sum+7;
+        }
+        
+        $(".display-box").html(" "); // Clear the box
+        $(".display-box").html(sum);
+    });
+    
 });
 
 
