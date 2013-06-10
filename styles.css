@@ -28,4 +28,11 @@
 }
 
 
-
+.label {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 250px;
+    height: 30px;
+    border: 1px solid black;
+}
