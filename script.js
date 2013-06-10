@@ -12,45 +12,48 @@ $(document).ready(function () {
     $("#txtInput").keyup(function () {
         $(".display-box").html($("#txtInput").val());     
         var sum=0;
+        var initial_count=0;
         var temp_character;
         for(var character in $("#txtInput").val())
         {
             temp_character=character;
             for(var temp_char in $("#txtInput").val())
             {
-                
+                if(initial_count==0)
+                {
+                    initial_count++;
+                    continue;
+                }
+                else
+                {
+                    if(temp_character==temp_char)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        if( temp_character=='A' || temp_character=='I' || temp_character=='J' || temp_character=='Q' || temp_character=='Y')
+                            sum=sum+1;
+                        else if(temp_character=='B' || temp_character=='K' || temp_character=='R')
+                            sum=sum+2;
+                            else if(temp_character=='C' || temp_character=='G' || temp_character=='L' || temp_character=='S')
+                                sum=sum+3;
+                            else if(temp_character=='D' || temp_character=='M' || temp_character=='T')
+                                sum=sum+4;
+                                else if(temp_character=='F' || temp_character=='P')
+                                    sum=sum+8;
+                                else if(temp_character=='E' || temp_character=='H' || temp_character=='N' || temp_character=='X')
+                                    sum=sum+5;
+                                    else if(temp_character=='U' || temp_character=='V' || temp_character=='W')
+                                        sum=sum+6;
+                                    else
+                                        sum=sum+7;
+                    }
+                }
             }
         }
-    });
-    $("#btnadd").click(function () {
-        $("#output").html("hei");
-        var sum=0;
-        for(var character in $("#txtInput").val())
-        {
-            if( character=='A' || character=='I' || character=='J' || character=='Q' || character=='Y')
-                sum=sum+1;
-            else if(character=='B' || character=='K' || character=='R')
-                sum=sum+2;
-                else if(character=='C' || character=='G' || character=='L' || character=='S')
-                    sum=sum+3;
-                else if(character=='D' || character=='M' || character=='T')
-                    sum=sum+4;
-                    else if(character=='F' || character=='P')
-                        sum=sum+8;
-                    else if(character=='E' || character=='H' || character=='N' || character=='X')
-                        sum=sum+5;
-                        else if(character=='U' || character=='V' || character=='W')
-                            sum=sum+6;
-                        else
-                        {
-                            sum=sum+7;
-                            
-                        }
-        }
-        
-        $(".display-box").html(" "); // Clear the box
-        $(".display-box").html(sum);
-    });
+        $("#output").html(sum);
+    });   
     
 });
 
