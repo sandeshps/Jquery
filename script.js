@@ -9,12 +9,9 @@
 
 
 $(document).ready(function () {
-    $("#txtInput").keydown(function () {
-        var msg = $("#txtInput").text();
-        $(".display-box").append($("#txtInput").val());
+    $("#txtInput").keyup(function () {
+        $(".display-box").html($("#txtInput").val());                
     });
 });
-
-
 
 
