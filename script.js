@@ -17,7 +17,7 @@ $(document).ready(function () {
         var text = $("#txtInput").val().toUpperCase(); // Convert the text to uppercase
         var display_text=$(".display-box");
         var output_result=$("#output");
-        display_text.html($("#txtInput").val()); // Display the text you type in the div
+        display_text.html(text.toLowerCase()); // Display the text you type in the div
         for(var i=0;i<text_length;i++) // Take each character and calculate the value
         {
             switch(text[i])
