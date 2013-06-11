@@ -28,7 +28,26 @@ $(document).ready(function () {
                     continue;
                 else
                 {
-                    if( text[i]=='A' || text[i]=='I' || text[i]=='J' || text[i]=='Q' || text[i]=='Y')
+                    switch(text[i])
+                    {
+                            case  'A' || 'I' || 'J' || 'Q' || 'Y'  : sum=sum+1;
+                                                                       break;
+                            case  'B' || 'K' || 'R'  : sum=sum+2;
+                                                         break;
+                            case  'C' || 'G' | 'L' || 'S'  : sum=sum+3;
+                                                               break;
+                            case  'D' || 'M' || 'T'  : sum=sum+4;
+                                                         break;
+                            case  'F' || 'P'  : sum=sum+8;
+                                                  break;
+                            case  'E' || 'H' || 'N' || 'X' : sum=sum+5;
+                                                             break;
+                            case  'U' || 'V' || 'W' : sum=sum+6;
+                                                      break;
+                            case  'O' || 'Z' : sum=sum+7;
+                                               break;
+                    }
+                    /*if( text[i]=='A' || text[i]=='I' || text[i]=='J' || text[i]=='Q' || text[i]=='Y')
                             sum=sum+1;
                         else if(text[i]=='B' || text[i]=='K' || text[i]=='R')
                             sum=sum+2;
@@ -43,7 +62,7 @@ $(document).ready(function () {
                                     else if(text[i]=='U' || text[i]=='V' || text[i]=='W')
                                         sum=sum+6;
                                     else
-                                        sum=sum+7;   
+                                        sum=sum+7;   */
                 }
             }
                 //$("#test").append(st[i]);
