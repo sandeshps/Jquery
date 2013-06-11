@@ -8,16 +8,17 @@
  
 
 
-$(document).ready(function () {
-    
-   $("#txtInput").keyup(function () {
+$(document).ready(function () {    
+   $("#txtInput").keyup(function () { // Whenever you press any key, this function will get executed 
         var sum=0;
         var result=0;
         var remainder;
         var text_length= $("#txtInput").val().length; // To get the length of the text
         var text = $("#txtInput").val().toUpperCase(); // Convert the text to uppercase
-        $(".display-box").html($("#txtInput").val()); // Display the text you type in the div
-        for(var i=0;i<text_length;i++)
+        var display_text=$(".display-box");
+        var output_result=$("#output");
+        display_text.html($("#txtInput").val()); // Display the text you type in the div
+        for(var i=0;i<text_length;i++) // Take each character and calculate the value
         {
             switch(text[i])
                 {
@@ -47,13 +48,13 @@ $(document).ready(function () {
                             break;
                     }       
         }        
-        while(sum>0)
+        while(sum>0) // Add each digit 
         {
-            remainder=sum%10;
-            result=result+remainder;
-            sum=sum/10;                        
+            remainder=sum%10; // Extract the right most digit
+            result=result+remainder; // Add the right most digit to the existing result value
+            sum=sum/10;     // Find the quotient
         }
-        $("#output").html(parseInt(result));
+        output_result.html(parseInt(result)); // Output the result
     });   
     
 });
