@@ -10,8 +10,9 @@
     
     $(document).ready(function () {    
        $("#txtInput").keyup(function () { // Whenever you press any key, this function will get executed 
-           displayText(getText());
-           result(calculateValue(getText()));
+           var get_Text=getText();
+           displayText(get_Text);
+           result(calculateValue(get_Text));
         });           
     });
 
@@ -32,9 +33,10 @@
     function calculateValue(text) {
         var text_length=text.length;
         var sum=0;
+        var input_text=text.toUpperCase();
         for(var i=0;i<text_length;i++) // Take each character and calculate the value
                 {
-                    switch(text[i])
+                    switch(input_text[i])
                         {
                                 case  'A' : case 'I' : case 'J' : case 'Q' :case 'Y' :
                                     sum=sum+1;
