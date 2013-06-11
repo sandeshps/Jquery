@@ -9,16 +9,11 @@
 
 
 $(document).ready(function () {
-    $("#btn").click(function () {
-                    var l= $("#txtInput").val().length;
-                    var st = $("#txtInput").val();
-                    for( var i=0;i<l;i++)
-                        $("#test").append(st[i]);
-                    });
-    $("#txtInput").keyup(function () {
+    
+   $("#txtInput").keyup(function () {
         var sum=0;
         var text_length= $("#txtInput").val().length;
-        var text = $("#txtInput").val();
+        var text = $("#txtInput").val().toUpperCase();
         $(".display-box").html($("#txtInput").val());
         for(var i=0;i<text_length;i++)
         {
@@ -30,21 +25,21 @@ $(document).ready(function () {
                 {
                     switch(text[i])
                     {
-                            case  'A' || 'I' || 'J' || 'Q' || 'Y'  : sum=sum+1;
+                            case  'A' : case 'I' : case 'J' : case 'Q' :case 'Y'  : sum=sum+1;
                                                                        break;
-                            case  'B' || 'K' || 'R'  : sum=sum+2;
+                            case  'B' : case 'K' : case 'R'  : sum=sum+2;
                                                          break;
-                            case  'C' || 'G' | 'L' || 'S'  : sum=sum+3;
+                            case  'C' : case  'G' : case 'L' : case  'S'  : sum=sum+3;
                                                                break;
-                            case  'D' || 'M' || 'T'  : sum=sum+4;
+                            case  'D' : case  'M' : case  'T'  : sum=sum+4;
                                                          break;
-                            case  'F' || 'P'  : sum=sum+8;
+                            case  'F' : case  'P'  : sum=sum+8;
                                                   break;
-                            case  'E' || 'H' || 'N' || 'X' : sum=sum+5;
+                            case  'E' : case  'H' : case  'N' : case  'X' : sum=sum+5;
                                                              break;
-                            case  'U' || 'V' || 'W' : sum=sum+6;
+                            case  'U' : case  'V' : case  'W' : sum=sum+6;
                                                       break;
-                            case  'O' || 'Z' : sum=sum+7;
+                            case  'O' : case  'Z' : sum=sum+7;
                                                break;
                     }
                     /*if( text[i]=='A' || text[i]=='I' || text[i]=='J' || text[i]=='Q' || text[i]=='Y')
